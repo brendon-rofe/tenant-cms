@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { TenantModule } from './tenant/tenant.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot(
@@ -13,6 +14,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       entities: ["dist/**/*.entity{.ts,.js}"],
       synchronize: true
     }
-  )],
+  ), 
+  TenantModule],
 })
 export class AppModule {}
